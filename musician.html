@@ -17,13 +17,35 @@
 
     <input type="button" onclick="checkGuess()" value="Submit">
 </form>
-
+<br>
+<div class="container">
+    <img src="Alderflies.jpg" height="100px" width="100px" alt="grasshopper" id="image" onclick="swapImage()">
+</div>
 
 <p id="result"></p>
 
 <script> 
 correct = 0;
 wrong = 0;
+var useImage = 1;
+
+function swapImage() {
+            switch (useImage) {
+                case 1:
+                    image.src = "Alderflies.jpg";
+                    useImage = 2;
+                    break;
+                case 2:
+                    image.src = "Antlions.JPG";
+                    useImage = 3;
+                    break;
+                case 3:
+                    image.src = "Roaches.JPG";
+                    useImage = 1;
+                    break;
+
+            }
+        }
 
 function checkGuess(){
     console.log("Getting form values")
@@ -41,6 +63,7 @@ function checkGuess(){
         result.innerHTML = "correct : "+correct+" , "+" wrong : "+ wrong;
         alert("Wrong Musician");
     }
+    
 }
 </script>
 
